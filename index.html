@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arale Games — Free Browser Games</title>
+<meta name="description" content="Free browser games with a twist: billiards, marble shooting, and marble block stacking. No downloads, no sign-ups, play instantly.">
+<style>
+  :root { --bg:#f7f5f0; --card:#fff; --ink:#222; --muted:#666; --accent:#2f6fed; --line:#e6e1d8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 8px; }
+  header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  h1 { margin:0; font-size:26px; }
+  .tag { margin:8px 0 0; color:var(--muted); font-size:15px; line-height:1.5; }
+  .lang-btn { flex:none; border:1px solid var(--line); background:#fff; border-radius:999px; padding:7px 14px; font-size:14px; cursor:pointer; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin:28px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; }
+  .card h2 { margin:0 0 8px; font-size:19px; }
+  .card p { margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.6; flex:1; }
+  .play { display:inline-block; text-align:center; background:var(--accent); color:#fff; text-decoration:none; border-radius:10px; padding:11px 0; font-size:15px; font-weight:600; }
+  .play:hover { filter:brightness(1.08); }
+  footer { border-top:1px solid var(--line); margin-top:8px; padding:16px 0 28px; color:var(--muted); font-size:13px; line-height:1.8; }
+  footer b { color:var(--ink); }
+  @media (max-width:520px) { h1 { font-size:22px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 data-i18n="title">Arale Games</h1>
+      <p class="tag" data-i18n="tag">Free browser games with a twist. No downloads, no sign-ups — tap a card and play.</p>
+    </div>
+    <button class="lang-btn" id="langBtn" type="button">中文</button>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2 data-i18n="billiardsName">Billiards</h2>
+      <p data-i18n="billiardsDesc">Classic 8-ball pool. Play against the computer or take turns with a friend on the same screen. Drag to aim, hold to charge, sink all your balls then the 8 ball.</p>
+      <a class="play" href="https://app.qingyinhui.com/billiards/" data-i18n="play">Play</a>
+    </section>
+    <section class="card">
+      <h2 data-i18n="marbleName">Marble Game</h2>
+      <p data-i18n="marbleDesc">Flick-to-shoot marble game with 12 levels. Aim, flick, and knock target marbles out of the ring — watch out for the black marble and hunt the hidden gold one.</p>
+      <a class="play" href="https://app.qingyinhui.com/marble-game/" data-i18n="play">Play</a>
+    </section>
+    <section class="card">
+      <h2 data-i18n="marbleTetrisName">Marble Tetris</h2>
+      <p data-i18n="marbleTetrisDesc">Falling blocks meet real marble physics. Stack, clear lines, and watch marbles tumble, bounce, and shatter on hard drop.</p>
+      <a class="play" href="https://app.qingyinhui.com/marble-tetris/" data-i18n="play">Play</a>
+    </section>
+  </main>
+
+  <footer>
+    <b data-i18n="complianceTitle">Good to know</b><br>
+    <span data-i18n="c1">Rated E for Everyone: suitable for all ages, no violence, no gambling, no chat.</span><br>
+    <span data-i18n="c2">No in-app purchases, no loot boxes, no real-money gambling.</span><br>
+    <span data-i18n="c3">No personal data collected — scores and progress are stored only in your browser.</span><br>
+    <span data-i18n="c4">Photosensitivity note: if you feel discomfort from fast-moving visuals, please stop playing.</span>
+  </footer>
+</div>
+
+<script>
+var I18N = {
+  en: {
+    title: "Arale Games",
+    tag: "Free browser games with a twist. No downloads, no sign-ups \u2014 tap a card and play.",
+    billiardsName: "Billiards",
+    billiardsDesc: "Classic 8-ball pool. Play against the computer or take turns with a friend on the same screen. Drag to aim, hold to charge, sink all your balls then the 8 ball.",
+    marbleName: "Marble Game",
+    marbleDesc: "Flick-to-shoot marble game with 12 levels. Aim, flick, and knock target marbles out of the ring \u2014 watch out for the black marble and hunt the hidden gold one.",
+    marbleTetrisName: "Marble Tetris",
+    marbleTetrisDesc: "Falling blocks meet real marble physics. Stack, clear lines, and watch marbles tumble, bounce, and shatter on hard drop.",
+    play: "Play",
+    complianceTitle: "Good to know",
+    c1: "Rated E for Everyone: suitable for all ages, no violence, no gambling, no chat.",
+    c2: "No in-app purchases, no loot boxes, no real-money gambling.",
+    c3: "No personal data collected \u2014 scores and progress are stored only in your browser.",
+    c4: "Photosensitivity note: if you feel discomfort from fast-moving visuals, please stop playing."
+  },
+  zh: {
+    title: "Arale 游戏",
+    tag: "免费小游戏，各带一点特别玩法。不用下载、不用注册，点卡片就能玩。",
+    billiardsName: "台球游戏",
+    billiardsDesc: "标准 8 球玩法。可单人对电脑，或和朋友同屏轮流击球：拖动瞄准、按住蓄力，先清自己的球再打 8 号球。",
+    marbleName: "弹珠游戏",
+    marbleDesc: "上推瞄准发射的弹珠游戏，共 12 关。把目标珠撞出圈得分，小心黑珠，留意藏起来的金珠。",
+    marbleTetrisName: "弹珠俄罗斯方块",
+    marbleTetrisDesc: "俄罗斯方块 + 真实弹珠物理。堆叠消行，弹珠会滚动、弹跳，硬降时还会震散。",
+    play: "开始玩",
+    complianceTitle: "须知",
+    c1: "适合所有年龄（Rated E for Everyone，无暴力、无赌博、无聊天）。",
+    c2: "无内购、无开箱、无真钱赌博。",
+    c3: "不收集个人数据，分数与进度只存在你的浏览器本地。",
+    c4: "光敏性提示：快速移动的画面如让你不适，请立即停止游玩。"
+  }
+};
+var KEY = "araleGamesLang";
+function getLang() {
+  var m = /[?&]lang=(en|zh)(?:&|$)/.exec(location.search);
+  if (m) return m[1];
+  try {
+    var s = localStorage.getItem(KEY);
+    if (s === "en" || s === "zh") return s;
+  } catch (e) {}
+  return ((navigator.language || "en").toLowerCase().indexOf("zh") === 0) ? "zh" : "en";
+}
+function applyLang(lang) {
+  var dict = I18N[lang];
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    var k = el.getAttribute("data-i18n");
+    if (dict[k] !== undefined) el.textContent = dict[k];
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("langBtn").textContent = (lang === "en") ? "中文" : "EN";
+  try { localStorage.setItem(KEY, lang); } catch (e) {}
+  var url = new URL(location.href);
+  url.searchParams.set("lang", lang);
+  history.replaceState(null, "", url);
+}
+var lang = getLang();
+applyLang(lang);
+document.getElementById("langBtn").addEventListener("click", function () {
+  lang = (lang === "en") ? "zh" : "en";
+  applyLang(lang);
+});
+</script>
+</body>
+</html>
